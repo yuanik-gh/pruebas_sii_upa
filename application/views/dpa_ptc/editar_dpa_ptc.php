@@ -1,5 +1,5 @@
-			<h2>Dar de alta DPA/PTC</h2><hr>
-			<form class="form-group" id="formAgregarDpaPtc" action="<?=base_url()?>index.php/dpa_ptc/guardar_dpa_ptc" method="POST">
+			<h2>Editar DPA/PTC</h2><hr>
+			<form class="form-group" id="formAgregarDpaPtc" action="<?=base_url()?>index.php/dpa_ptc/guardar_cambios_dpa_ptc" method="POST">
 				
 				<br> <!-- Profesor -->
 				<label for="profesor">Profesor</label>

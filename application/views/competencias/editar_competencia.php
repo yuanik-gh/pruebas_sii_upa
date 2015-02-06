@@ -1,6 +1,6 @@
 			<h2>Editar competencia</h2><hr>
 
-			<form class="form-group" id="formAgregarCompetencia" action="<?=base_url()?>index.php/competencias/guardar_cambios_competencia" method="POST">
+			<form class="form-group" id="formAgregarCompetencia" action="<?=site_url()?>/competencias/guardar_cambios_competencia" method="POST">
 				
 				<label for="fecha_inicio" class=" control-label">Competencias</label>
 				<textarea class="form-control" rows="5" name="competencia" id="competencia"><?=$competencia?></textarea><br>
@@ -39,7 +39,7 @@
 
 				<hr>
 				<div align="right">
-					<a type="button" class="btn btn-danger" href="<?=base_url()?>index.php/competencias">Cancelar</a>
+					<a type="button" class="btn btn-danger" href="<?=site_url()?>/competencias">Cancelar</a>
 					<button type="submit" class="btn btn-primary" id="agregarCompetencia">Editar competencia</button>
 				</div>
 

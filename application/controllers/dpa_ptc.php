@@ -7,13 +7,20 @@ class Dpa_Ptc extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->database();
-        $this->load->model('dpaptcModel');
+        $this->load->model('dpaptc_Model');
     }
 
     public function index() {
+        $data = array('prof_sistemas' => $this->dpaptc_Model->verDpaPtcSistemas(),
+            'prof_mecatronica' => $this->dpaptc_Model->verDpaPtcMecatronica(),
+            'prof_industrial' => $this->dpaptc_Model->verDpaPtcIndustrial(),
+            'prof_mecanica' => $this->dpaptc_Model->verDpaPtcMecanica(),
+            'prof_energias' => $this->dpaptc_Model->verDpaPtcEnergias(),
+            'prof_negocios' => $this->dpaptc_Model->verDpaPtcNegocios()
+        );
+        
         $this->load->view('headers/librerias');
-        $this->load->view('dpa_ptc/dpa_ptc');
+        $this->load->view('dpa_ptc/dpa_ptc',$data);
         $this->load->view('footer');
     }
 
@@ -24,16 +31,24 @@ class Dpa_Ptc extends CI_Controller {
     }
 
     public function guardar_dpa_ptc() {
-        $data = array(
-            'profesor' => $this->input->post('profesor', TRUE),
-            'carrera' => $this->input->post('carrera', TRUE),
-            'puesto' => $this->input->post('puesto', TRUE),
-            'fecha_inicio' => $this->input->post('fecha_inicio', TRUE),
-            'fecha_salida' => $this->input->post('fecha_salida', TRUE)
-        );
-
-        $this->dpaptcModel->guardar($data);
+        $data = $this->input->post();
+        $this->dpaptc_Model->guardar_dpaptc($data);
         redirect('dpa_ptc');
+    }
+    
+    public function eliminar_dpa_ptc($id) {
+        $del = $this->dpaptc_Model->eliminar_dpaptc($id);
+        redirect('dpa_ptc');
+    }
+    
+    public function editar_dpa_ptc($id) {
+        $this->load->view('headers/librerias');
+        $this->load->view('dpa_ptc/editar_dpa_ptc');
+        $this->load->view('footer');
+    }
+    
+    public function guardar_cambios_dpa_ptc() {
+        echo 'Guardar cambios';
     }
 }
 

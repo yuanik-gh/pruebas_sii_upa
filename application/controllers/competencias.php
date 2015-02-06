@@ -7,14 +7,12 @@ class Competencias extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->database();
         $this->load->model('competenciasModel');
     }
 
     public function index(){
         $data = array(
-            'competencias' => $this->competenciasModel->verCompetencias(),
-            'dump' => 0
+            'competencias' => $this->competenciasModel->verCompetencias()
         );
 
         $this->load->view('headers/librerias');

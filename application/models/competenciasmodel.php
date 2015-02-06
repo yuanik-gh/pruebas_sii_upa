@@ -39,19 +39,3 @@ class competenciasModel extends CI_Model {
 		$this->db->update('competencias', $data);
 	}
 }
-
-/*
-	// Insertar info en BD:
-	$data = array('nombre' => 'Jose' , 'apellido' => 'Palacios');
-    $this->db->insert('persona',$data);
-    $data = array('nombre' => 'Majo' , 'apellido' => 'Ibarra');
-    $this->db->insert('persona',$data);
-
-    // Eliminar info en BD:
-    $this->db->delete('persona',array('nombre' => 'MariJo'));
-
-    // Modificar info en BD:
-    $data = array('nombre' => 'Juan','apellido' => 'Palacios');
-    $this->db->where('nombre','Jose');
-    $this->db->update('persona',$data);
-*/
