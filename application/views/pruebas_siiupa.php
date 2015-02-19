@@ -72,9 +72,10 @@
 	<div id="body">
 		<p>Rutas:</p>
 		<code>
-			<a href="<?=base_url()?>index.php/competencias">Competecias</a>
-			<a href="<?=base_url()?>index.php/dpa_ptc">Dpa-Ptc</a>
-			<a href="<?=base_url()?>index.php/pruebas_siiupa/index">Cancelar</a>
+			<a href="<?=site_url()?>/competencias">Competecias</a>
+			<a href="<?=site_url()?>/dpa_ptc">Dpa-Ptc</a>
+			<a href="<?=site_url()?>/encuestas/encuestas">Encuestas</a>
+                        <a href="<?=site_url()?>/pruebas_siiupa/index">Cancelar</a>
 		</code>
 	</div>
 

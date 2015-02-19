@@ -18,7 +18,6 @@ class dpaptc_Model extends CI_Model {
 	}
         
         function verDpaPtcMecatronica() {
-            //$query = $this->db->get('dpa_ptc');
             $this->db->where('carrera', 2);
             $query = $this->db->get('dpa_ptc');
             if ($query->num_rows() > 0) {
@@ -29,7 +28,6 @@ class dpaptc_Model extends CI_Model {
 	}
         
         function verDpaPtcIndustrial() {
-            //$query = $this->db->get('dpa_ptc');
             $this->db->where('carrera', 3);
             $query = $this->db->get('dpa_ptc');
             if ($query->num_rows() > 0) {
@@ -40,7 +38,6 @@ class dpaptc_Model extends CI_Model {
 	}
         
         function verDpaPtcMecanica() {
-            //$query = $this->db->get('dpa_ptc');
             $this->db->where('carrera', 4);
             $query = $this->db->get('dpa_ptc');
             if ($query->num_rows() > 0) {
@@ -51,7 +48,6 @@ class dpaptc_Model extends CI_Model {
 	}
         
         function verDpaPtcEnergias() {
-            //$query = $this->db->get('dpa_ptc');
             $this->db->where('carrera', 5);
             $query = $this->db->get('dpa_ptc');
             if ($query->num_rows() > 0) {
@@ -62,7 +58,6 @@ class dpaptc_Model extends CI_Model {
 	}
         
         function verDpaPtcNegocios() {
-            //$query = $this->db->get('dpa_ptc');
             $this->db->where('carrera', 6);
             $query = $this->db->get('dpa_ptc');
             if ($query->num_rows() > 0) {
@@ -72,13 +67,50 @@ class dpaptc_Model extends CI_Model {
             }
 	}
 
+        /* ------------------------------------ */
+        
+        
 	function guardar_dpaptc($data) {
             $this->db->insert('dpa_ptc', $data);
             return $this->db->insert_id();
 	}
         
         function eliminar_dpaptc($id) {
-            $this->db->where('id_pta_ptc', $id);
+            $this->db->where('id_dpa_ptc', $id);
             $this->db->delete('dpa_ptc');
+        }
+        
+        function obtener_dpaptc($id) {
+            $this->db->where('id_dpa_ptc', $id);
+            $query = $this->db->get('dpa_ptc');
+            // ó $query = $this->db->get_where('encuesta', array('id'=>$id));
+            if ($query->num_rows() > 0) {
+                return $query;
+            } else {
+                return FALSE;
+            }
+        }
+        
+        function editar_dpaptc($data) {
+            $this->db->where('id_dpa_ptc', $data["id_dpa_ptc"]);
+            $this->db->update('dpa_ptc', $data);
+        }
+        
+        function ver_curso() {
+            $curso = $this->db->get('carreras');
+            if ($curso->num_rows() > 0) {
+                return $curso->result_array();
+            } else {
+                return FALSE;
+            }
+        }
+        
+        function ver_puesto() {
+            $puesto = $this->db->get('puesto_profesor');
+            if ($puesto->num_rows() > 0) {
+                return $puesto->result_array(); // ->row_array();
+            } else {
+                return FALSE;
+            }
         }
 }
