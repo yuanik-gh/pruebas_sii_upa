@@ -22,10 +22,10 @@
         </div>
     </div>
 
-    <!-- Descripción de encuesta 
+    <!-- Descripción de encuesta -->
     <label for="descripcion" class=" control-label">Descripción de encuesta</label>
-    <textarea class="form-control" rows="5" name="descripcion" id="descripcion" placeholder="Ingresa una descripción"></textarea><br>
--->
+    <textarea class="form-control" rows="5" name="descripcion" id="descripcion" placeholder="Ingresa una descripción"><?= $descripcion ?></textarea><br>
+
     <!-- Botones --> <hr>
     <div align="right">
         <a type="button" class="btn btn-danger" href="<?= site_url() ?>/encuestas">Cancelar</a>

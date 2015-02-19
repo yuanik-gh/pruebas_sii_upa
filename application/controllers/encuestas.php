@@ -44,12 +44,14 @@ class Encuestas extends CI_Controller {
             foreach ($get_data->result() as $row) {
                 $nombre = $row->nombre;
                 $estatus = $row->estatus;
+                $descripcion = $row->descripcion;
             }
             
             $data = array (
                 'idencuesta' => $id,
                 'nombre' => $nombre,
-                'estatus' => $estatus
+                'estatus' => $estatus,
+                'descripcion' => $descripcion
             );
 
         } else {

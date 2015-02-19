@@ -5,33 +5,29 @@
         <tr>
             <th>Nombre de encuesta</th>
             <th>Estado</th>
-            <!--<th>Descripción</th>-->
+            <th>Descripción</th>
             <th>Opciones</th>
         </tr>
     </thead>
     <tbody>
         
-        <?php
-        if ($encuestas != NULL) {
-            foreach ($encuestas->result() as $row) {
-                echo "<tr>";
-                echo "<td>" . $row->nombre . "</td>";
-                echo "<td>" . $row->estatus . "</td>";
-                //echo "<td>" . $row->descripcion . "</td>";
-                echo "<td>";
-                echo "<a type='button' class='btn btn-default' aria-label='Left Align' href=" . site_url() . "/encuestas/update_form/" . $row->idencuesta . ">";
-                echo "<span class='glyphicon glyphicon-edit' aria-hidden='true'></span>";
-                echo "</a>";
-                echo "<a type='button' class='btn btn-default' aria-label='Left Align' href=" . site_url() . "/encuestas/delete/" . $row->idencuesta . ">";
-                echo "<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>";
-                echo "</a>";
-                echo "</td>";
-                echo "</tr>";
-            }
-        } else {
-            echo "No existen encuestas";
-        }
-        ?>
+        <?php if ($encuestas != NULL) {
+            foreach ($encuestas->result() as $row): ?>
+                <tr>
+                    <td><?php echo $row->nombre; ?></td>
+                    <td><?php echo $row->estatus; ?></td>
+                    <td><?php echo $row->descripcion; ?></td>
+                    <td>
+                        <a type="button" class="btn btn-default" aria-label="Left Align" href="<?=site_url()?>/encuestas/update_form/<?=$row->idencuesta?>">
+                            <span class='glyphicon glyphicon-edit' aria-hidden='true'></span>
+                        </a>
+                        <a type="button" class="btn btn-default" aria-label="Left Align" href="<?=site_url()?>/encuestas/delete/<?=$row->idencuesta?>">
+                            <span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
+                        </a>
+                    </td>
+                </tr>
+        <?php endforeach;  
+        } ?>
         
     </tbody>
 </table>
