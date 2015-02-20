@@ -18,6 +18,9 @@
                     <td><?php echo $e['estatus']; ?></td>
                     <td><?php echo $e['descripcion']; ?></td>
                     <td>
+                        <a type="button" class="btn btn-default" aria-label="Left Align" href="<?=site_url()?>/preguntas/set_form/<?=$e['idencuesta']?>">
+                            <span class='glyphicon glyphicon-plus' aria-hidden='true'></span>
+                        </a>
                         <a type="button" class="btn btn-default" aria-label="Left Align" href="<?=site_url()?>/encuestas/update_form/<?=$e['idencuesta']?>">
                             <span class='glyphicon glyphicon-edit' aria-hidden='true'></span>
                         </a>

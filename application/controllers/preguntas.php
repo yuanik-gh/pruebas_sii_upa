@@ -19,10 +19,20 @@ class Preguntas extends CI_Controller {
     }
 
     // Agregar nueva pregunta:
-    public function set_form(){
+    /*public function set_form(){
         $data = array (
             'categorias' => $this->pregunta_model->get_all_categorias(),
             'encuestas' => $this->pregunta_model->get_all_encuestas()
+        );
+        $this->load->view('headers/librerias');
+        $this->load->view('preguntas/set_form', $data);
+        $this->load->view('footer');
+    }*/
+    public function set_form($id){
+        $data = array (
+            'categorias' => $this->pregunta_model->get_all_categorias(),
+            'encuestas' => $this->pregunta_model->get_all_encuestas(),
+            'idencuesta' => $id
         );
         $this->load->view('headers/librerias');
         $this->load->view('preguntas/set_form', $data);

@@ -18,9 +18,9 @@
             <select id="selectbasic" name="selectbasic" class="form-control">
                 <option value="">Seleciona una opción</option>
                 <?php
-                foreach ($categorias as $c) {
-                    echo "<option value=" . $c['idcategoria_en'] . ">" . $c['categoria_en'] . "</option>";
-                }
+                foreach ($categorias as $c) { ?>
+                    <option value=" <?php echo $c['idcategoria_en'] ?> "><?php echo $c['categoria_en'] ?></option>
+                <?php }
                 ?>
             </select>
             <br>
@@ -28,11 +28,9 @@
             <label for="opcion1">Encuesta</label>
             <select id="selectbasic" name="selectbasic" class="form-control">
                 <option value="">Seleciona una opción</option>
-                <?php
-                foreach ($encuestas as $e) {
-                    echo "<option value=" . $e['idencuesta'] . ">" . $e['nombre'] . "</option>";
-                }
-                ?>
+                <?php foreach ($encuestas as $e) { ?>
+                    <option value=" <?php echo $e['idencuesta'] ?> " <?php if($idencuesta == $e['idencuesta']) {echo 'selected'; } ?>><?php echo $e['nombre']; ?></option>
+                <?php } ?>
             </select>
             <br>
             
