@@ -74,8 +74,8 @@
 		<code>
 			<a href="<?=site_url()?>/competencias">Competecias</a>
 			<a href="<?=site_url()?>/dpa_ptc">Dpa-Ptc</a>
-			<a href="<?=site_url()?>/encuestas/encuestas">Encuestas</a>
-                        <a href="<?=site_url()?>/pruebas_siiupa/index">Cancelar</a>
+			<a href="<?=site_url()?>/encuestas">Encuestas</a>
+                        <a href="<?=site_url()?>/preguntas">Preguntas</a>
 		</code>
 	</div>
 

@@ -27,6 +27,16 @@ class Pregunta_Model extends CI_Model {
     
     public function get_all() {
         $query = $this->db->get('pregunta_encuesta');
-        return ($query->num_row > 0) ? ($query->result_array()) : null;
+        return ($query->num_rows() > 0) ? $query->result_array() : NULL;
+    }
+    
+    public function get_all_categorias() {
+        $categoria = $this->db->get('categoria_encuesta');
+        return ($categoria->num_rows() > 0) ? $categoria->result_array() : NULL;
+    }
+    
+    public function get_all_encuestas() {
+        $encuesta = $this->db->get('encuesta');
+        return ($encuesta->num_rows() > 0) ? $encuesta->result_array() : NULL;
     }
 }

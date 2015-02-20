@@ -27,6 +27,6 @@ class Encuesta_Model extends CI_Model {
     
     public function get_all() {
         $query = $this->db->get('encuesta');
-        return ($query->num_rows() > 0) ? $query : NULL;
+        return ($query->num_rows() > 0) ? $query->result_array() : NULL;
     }
 }

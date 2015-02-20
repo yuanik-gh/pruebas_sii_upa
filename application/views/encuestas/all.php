@@ -9,19 +9,19 @@
             <th>Opciones</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody>        
         
         <?php if ($encuestas != NULL) {
-            foreach ($encuestas->result() as $row): ?>
+            foreach ($encuestas as $e): ?>
                 <tr>
-                    <td><?php echo $row->nombre; ?></td>
-                    <td><?php echo $row->estatus; ?></td>
-                    <td><?php echo $row->descripcion; ?></td>
+                    <td><?php echo $e['nombre']; ?></td>
+                    <td><?php echo $e['estatus']; ?></td>
+                    <td><?php echo $e['descripcion']; ?></td>
                     <td>
-                        <a type="button" class="btn btn-default" aria-label="Left Align" href="<?=site_url()?>/encuestas/update_form/<?=$row->idencuesta?>">
+                        <a type="button" class="btn btn-default" aria-label="Left Align" href="<?=site_url()?>/encuestas/update_form/<?=$e['idencuesta']?>">
                             <span class='glyphicon glyphicon-edit' aria-hidden='true'></span>
                         </a>
-                        <a type="button" class="btn btn-default" aria-label="Left Align" href="<?=site_url()?>/encuestas/delete/<?=$row->idencuesta?>">
+                        <a type="button" class="btn btn-default" aria-label="Left Align" href="<?=site_url()?>/encuestas/delete/<?=$e['idencuesta']?>">
                             <span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
                         </a>
                     </td>
